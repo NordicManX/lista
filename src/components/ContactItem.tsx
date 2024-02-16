@@ -3,14 +3,20 @@ import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 
 const ItemContainer = styled.div`
-  border: 3px solid #080808;
+  border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
-  background-color: #086375;
-  row-gap: 1fr;
+`
+const Input = styled.input`
+  display: flexbox;
+  margin: 5px;
+  margin-left: 210px;
+`
+const Button = styled.button`
+  margin-top: 5px;
   text-align: center;
-  color: #dbdbdb;
+  margin-left: 250px;
 `
 
 interface ContactItemProps {
@@ -52,25 +58,25 @@ const ContactItem: React.FC<ContactItemProps> = ({ contact }) => {
     <ItemContainer>
       {isEditing ? (
         <>
-          <input
+          <Input
             type="text"
             name="fullName"
             value={editedContact.fullName}
             onChange={handleInputChange}
           />
-          <input
+          <Input
             type="email"
             name="email"
             value={editedContact.email}
             onChange={handleInputChange}
           />
-          <input
+          <Input
             type="text"
             name="phone"
             value={editedContact.phone}
             onChange={handleInputChange}
           />
-          <button onClick={handleSaveEdit}>Salvar</button>
+          <Button onClick={handleSaveEdit}>Salvar</Button>
         </>
       ) : (
         <>

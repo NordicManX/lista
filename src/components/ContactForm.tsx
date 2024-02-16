@@ -5,6 +5,20 @@ import styled from 'styled-components'
 const FormContainer = styled.div`
   margin-top: 20px;
 `
+const H2 = styled.h2`
+  text-align: center;
+`
+
+const Button = styled.button`
+  margin-top: 5px;
+  text-align: center;
+  margin-left: 250px;
+`
+const Input = styled.input`
+  display: flexbox;
+  margin: 5px;
+  margin-left: 210px;
+`
 
 const ContactForm: React.FC = () => {
   const dispatch = useDispatch()
@@ -24,21 +38,6 @@ const ContactForm: React.FC = () => {
     dispatch({ type: 'ADD_CONTACT', payload: formData })
     setFormData({ fullName: '', email: '', phone: '' })
   }
-
-  const H2 = styled.h2`
-    text-align: center;
-  `
-
-  const Button = styled.button`
-    margin-top: 5px;
-    text-align: center;
-    margin-left: 250px;
-  `
-  const Input = styled.input`
-    display: flex;
-    margin: 5px;
-    margin-left: 210px;
-  `
 
   return (
     <FormContainer>
